@@ -37,7 +37,7 @@ const DeleteAccount: React.FC = () => {
     setIsDeleting(true);
     try {
       // First, login to get the token
-      const loginResponse = await fetch('https://hos-find-be.onrender.com/api/auth/login', {
+      const loginResponse = await fetch('https://swift-stay-be.onrender.com/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ const DeleteAccount: React.FC = () => {
       }
 
       // Now delete the account using the token
-      const deleteResponse = await fetch('https://hos-find-be.onrender.com/api/users/profile', {
+      const deleteResponse = await fetch('https://swift-stay-be.onrender.com/api/users/profile', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -107,28 +107,28 @@ const DeleteAccount: React.FC = () => {
   ];
 
   return (
-    <Layout className="delete-account-page" style={{ minHeight: '100vh', background: '#f8f9fa' }}>
+    <Layout className="delete-account-page" style={{ minHeight: '100vh', background: '#0f172a' }}>
       <Content style={{ padding: '40px 20px', maxWidth: '900px', margin: '0 auto' }}>
         <Button 
           type="link" 
           icon={<ArrowLeftOutlined />} 
           onClick={() => navigate('/')}
-          style={{ marginBottom: '20px', fontSize: '16px' }}
+          style={{ marginBottom: '20px', fontSize: '16px', color: '#93c5fd' }}
         >
           Back to Home
         </Button>
 
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <UserDeleteOutlined style={{ fontSize: '48px', color: '#e74c3c', marginBottom: '20px' }} />
-          <Title level={1} style={{ color: '#e74c3c', marginBottom: '10px' }}>
+          <UserDeleteOutlined style={{ fontSize: '48px', color: '#ef4444', marginBottom: '20px' }} />
+          <Title level={1} style={{ color: '#f3f4f6', marginBottom: '10px' }}>
             Delete My Account
           </Title>
-          <Paragraph style={{ fontSize: '18px', color: '#666' }}>
+          <Paragraph style={{ fontSize: '18px', color: '#cbd5e1' }}>
             Request to permanently delete your Swift Stay account and associated data
           </Paragraph>
         </div>
 
-        <div style={{ background: 'white', padding: '40px', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', marginBottom: '30px' }}>
+        <div style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '40px', borderRadius: '16px', boxShadow: '0 20px 60px rgba(0,0,0,0.35)', marginBottom: '30px' }}>
           <Alert
             message="Important Information"
             description="Account deletion is permanent and cannot be undone. Please read all information carefully before proceeding."
@@ -137,7 +137,7 @@ const DeleteAccount: React.FC = () => {
             style={{ marginBottom: '30px' }}
           />
 
-          <Title level={2} style={{ color: '#e74c3c', marginBottom: '20px' }}>How to Delete Your Account</Title>
+          <Title level={2} style={{ color: '#f3f4f6', marginBottom: '20px' }}>How to Delete Your Account</Title>
           
           <Steps current={currentStep} style={{ marginBottom: '40px' }}>
             {steps.map((item, index) => (
@@ -145,14 +145,14 @@ const DeleteAccount: React.FC = () => {
             ))}
           </Steps>
 
-          <Card style={{ marginBottom: '30px' }}>
-            <Title level={3} style={{ color: '#e74c3c' }}>Step 1: Contact Us</Title>
-            <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Card style={{ marginBottom: '30px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.12)' }}>
+            <Title level={3} style={{ color: '#e5e7eb' }}>Step 1: Contact Us</Title>
+            <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
               To delete your account, please contact us using one of the methods below. Include the following information:
             </Paragraph>
             
-            <div style={{ background: '#f5f5f5', padding: '20px', borderRadius: '8px', margin: '20px 0' }}>
-              <Text strong>Required Information:</Text>
+            <div style={{ background: 'rgba(255,255,255,0.06)', padding: '20px', borderRadius: '8px', margin: '20px 0', border: '1px solid rgba(255,255,255,0.12)', color: '#e5e7eb' }}>
+              <Text strong style={{ color: '#e5e7eb' }}>Required Information:</Text>
               <ul style={{ marginTop: '10px' }}>
                 <li>Your registered phone number</li>
                 <li>Your account password</li>
@@ -167,7 +167,7 @@ const DeleteAccount: React.FC = () => {
                 icon={<MailOutlined />} 
                 size="large"
                 href="mailto:kwesiselasi476@gmail.com?subject=Account%20Deletion%20Request"
-                style={{ backgroundColor: '#e74c3c', borderColor: '#e74c3c' }}
+                style={{ background: 'linear-gradient(135deg, #ef4444, #f59e0b)', borderColor: 'transparent' }}
               >
                 Email Us
               </Button>
@@ -175,6 +175,7 @@ const DeleteAccount: React.FC = () => {
                 icon={<PhoneOutlined />} 
                 size="large"
                 href="tel:+233240333837"
+                style={{ color: '#93c5fd', borderColor: 'rgba(255,255,255,0.12)' }}
               >
                 Call Us
               </Button>
@@ -183,7 +184,7 @@ const DeleteAccount: React.FC = () => {
                 icon={<LockOutlined />} 
                 size="large"
                 onClick={() => setShowDeleteForm(!showDeleteForm)}
-                style={{ borderColor: '#e74c3c', color: '#e74c3c' }}
+                style={{ borderColor: '#ef4444', color: '#ef4444' }}
               >
                 Delete Account Now
               </Button>
@@ -191,8 +192,8 @@ const DeleteAccount: React.FC = () => {
           </Card>
 
           {showDeleteForm && (
-            <Card style={{ marginBottom: '30px', border: '2px solid #e74c3c' }}>
-              <Title level={3} style={{ color: '#e74c3c', marginBottom: '20px' }}>
+            <Card style={{ marginBottom: '30px', border: '2px solid #ef4444', background: 'rgba(255,255,255,0.04)' }}>
+              <Title level={3} style={{ color: '#e5e7eb', marginBottom: '20px' }}>
                 ⚠️ Delete Account Immediately
               </Title>
               <Alert
@@ -220,6 +221,7 @@ const DeleteAccount: React.FC = () => {
                     prefix={<PhoneOutlined />} 
                     placeholder="Enter your phone number"
                     size="large"
+                    style={{ background: '#0b1220', borderColor: '#334155', color: '#e5e7eb' }}
                   />
                 </Form.Item>
 
@@ -234,6 +236,7 @@ const DeleteAccount: React.FC = () => {
                     prefix={<LockOutlined />} 
                     placeholder="Enter your password"
                     size="large"
+                    style={{ background: '#0b1220', borderColor: '#334155', color: '#e5e7eb' }}
                   />
                 </Form.Item>
 
@@ -246,8 +249,8 @@ const DeleteAccount: React.FC = () => {
                     danger
                     style={{ 
                       width: '100%',
-                      backgroundColor: '#e74c3c',
-                      borderColor: '#e74c3c'
+                      background: 'linear-gradient(135deg, #ef4444, #f59e0b)',
+                      borderColor: 'transparent'
                     }}
                   >
                     {isDeleting ? 'Deleting Account...' : 'Delete My Account'}
@@ -257,63 +260,63 @@ const DeleteAccount: React.FC = () => {
             </Card>
           )}
 
-          <Card style={{ marginBottom: '30px' }}>
-            <Title level={3} style={{ color: '#e74c3c' }}>What Data Will Be Deleted</Title>
-            <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Card style={{ marginBottom: '30px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.12)' }}>
+            <Title level={3} style={{ color: '#e5e7eb' }}>What Data Will Be Deleted</Title>
+            <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
               When you delete your account, we will permanently remove the following data:
             </Paragraph>
             
-            <ul style={{ fontSize: '16px', lineHeight: '1.8' }}>
+            <ul style={{ fontSize: '16px', lineHeight: '1.8', color: '#e5e7eb' }}>
               {dataTypes.map((item, index) => (
                 <li key={index} style={{ marginBottom: '8px' }}>
-                  <CheckCircleOutlined style={{ color: '#52c41a', marginRight: '8px' }} />
+                  <CheckCircleOutlined style={{ color: '#22c55e', marginRight: '8px' }} />
                   {item}
                 </li>
               ))}
             </ul>
           </Card>
 
-          <Card style={{ marginBottom: '30px' }}>
-            <Title level={3} style={{ color: '#e74c3c' }}>Data We May Retain</Title>
-            <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Card style={{ marginBottom: '30px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.12)' }}>
+            <Title level={3} style={{ color: '#e5e7eb' }}>Data We May Retain</Title>
+            <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
               For legal, regulatory, or security purposes, we may retain certain data:
             </Paragraph>
             
-            <ul style={{ fontSize: '16px', lineHeight: '1.8' }}>
+            <ul style={{ fontSize: '16px', lineHeight: '1.8', color: '#e5e7eb' }}>
               {retainedData.map((item, index) => (
                 <li key={index} style={{ marginBottom: '8px' }}>
-                  <ExclamationCircleOutlined style={{ color: '#faad14', marginRight: '8px' }} />
+                  <ExclamationCircleOutlined style={{ color: '#f59e0b', marginRight: '8px' }} />
                   {item}
                 </li>
               ))}
             </ul>
           </Card>
 
-          <Card>
-            <Title level={3} style={{ color: '#e74c3c' }}>Processing Timeline</Title>
+          <Card style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.12)' }}>
+            <Title level={3} style={{ color: '#e5e7eb' }}>Processing Timeline</Title>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', marginTop: '20px' }}>
-              <div style={{ textAlign: 'center', padding: '20px', background: '#f0f9ff', borderRadius: '8px' }}>
-                <Title level={4} style={{ color: '#1890ff' }}>24-48 Hours</Title>
-                <Text>Initial response and verification</Text>
+              <div style={{ textAlign: 'center', padding: '20px', background: 'rgba(59,130,246,0.15)', borderRadius: '8px', border: '1px solid rgba(59,130,246,0.35)' }}>
+                <Title level={4} style={{ color: '#60a5fa' }}>24-48 Hours</Title>
+                <Text style={{ color: '#e5e7eb' }}>Initial response and verification</Text>
               </div>
-              <div style={{ textAlign: 'center', padding: '20px', background: '#f6ffed', borderRadius: '8px' }}>
-                <Title level={4} style={{ color: '#52c41a' }}>7-14 Days</Title>
-                <Text>Account deletion completion</Text>
+              <div style={{ textAlign: 'center', padding: '20px', background: 'rgba(34,197,94,0.15)', borderRadius: '8px', border: '1px solid rgba(34,197,94,0.35)' }}>
+                <Title level={4} style={{ color: '#86efac' }}>7-14 Days</Title>
+                <Text style={{ color: '#e5e7eb' }}>Account deletion completion</Text>
               </div>
-              <div style={{ textAlign: 'center', padding: '20px', background: '#fff7e6', borderRadius: '8px' }}>
-                <Title level={4} style={{ color: '#faad14' }}>30 Days</Title>
-                <Text>Data purged from backups</Text>
+              <div style={{ textAlign: 'center', padding: '20px', background: 'rgba(245,158,11,0.12)', borderRadius: '8px', border: '1px solid rgba(245,158,11,0.35)' }}>
+                <Title level={4} style={{ color: '#fbbf24' }}>30 Days</Title>
+                <Text style={{ color: '#e5e7eb' }}>Data purged from backups</Text>
               </div>
             </div>
           </Card>
         </div>
 
-        <div style={{ background: '#fff2f0', padding: '20px', borderRadius: '8px', border: '1px solid #ffccc7' }}>
-          <Title level={4} style={{ color: '#cf1322', marginBottom: '10px' }}>
+        <div style={{ background: 'rgba(239,68,68,0.1)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(239,68,68,0.35)' }}>
+          <Title level={4} style={{ color: '#fca5a5', marginBottom: '10px' }}>
             <ExclamationCircleOutlined style={{ marginRight: '8px' }} />
             Important Notes
           </Title>
-          <ul style={{ margin: 0, paddingLeft: '20px' }}>
+          <ul style={{ margin: 0, paddingLeft: '20px', color: '#e5e7eb' }}>
             <li>Account deletion is permanent and cannot be reversed</li>
             <li>You will lose access to all your bookings and preferences</li>
             <li>Any active bookings will be cancelled</li>
@@ -325,9 +328,9 @@ const DeleteAccount: React.FC = () => {
         <Divider />
 
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
-          <Paragraph style={{ fontSize: '16px', color: '#666' }}>
+          <Paragraph style={{ fontSize: '16px', color: '#cbd5e1' }}>
             Need help or have questions? Contact us at{' '}
-            <a href="mailto:kwesiselasi476@gmail.com" style={{ color: '#e74c3c' }}>
+            <a href="mailto:kwesiselasi476@gmail.com" style={{ color: '#93c5fd' }}>
               kwesiselasi476@gmail.com
             </a>
           </Paragraph>

@@ -10,34 +10,34 @@ const PrivacyPolicy: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <Layout className="privacy-policy-page" style={{ minHeight: '100vh', background: '#f8f9fa' }}>
+    <Layout className="privacy-policy-page" style={{ minHeight: '100vh', background: '#0f172a' }}>
       <Content style={{ padding: '40px 20px', maxWidth: '800px', margin: '0 auto' }}>
         <Button 
           type="link" 
           icon={<ArrowLeftOutlined />} 
           onClick={() => navigate('/')}
-          style={{ marginBottom: '20px', fontSize: '16px' }}
+          style={{ marginBottom: '20px', fontSize: '16px', color: '#93c5fd' }}
         >
           Back to Home
         </Button>
 
-        <Title level={1} style={{ color: '#e74c3c', marginBottom: '30px', textAlign: 'center' }}>
+        <Title level={1} style={{ color: '#f3f4f6', marginBottom: '30px', textAlign: 'center' }}>
           Privacy Policy
         </Title>
 
-        <div style={{ background: 'white', padding: '40px', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
-          <Paragraph style={{ fontSize: '16px', marginBottom: '30px', textAlign: 'center' }}>
+        <div style={{ background: 'rgba(255,255,255,0.06)', padding: '40px', borderRadius: '16px', boxShadow: '0 20px 60px rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.12)' }}>
+          <Paragraph style={{ fontSize: '16px', marginBottom: '30px', textAlign: 'center', color: '#cbd5e1' }}>
             <Text strong>Last updated: {new Date().toLocaleDateString()}</Text>
           </Paragraph>
 
-          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#e5e7eb' }}>
             This Privacy Policy describes how Swift Stay ("we", "our", or "us") collects, uses, and shares your personal information when you use our mobile application and related services.
           </Paragraph>
 
-          <Title level={2} style={{ color: '#e74c3c', marginTop: '40px' }}>Information We Collect</Title>
+          <Title level={2} style={{ color: '#e5e7eb', marginTop: '40px' }}>Information We Collect</Title>
           
           <Title level={3}>Personal Information</Title>
-          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
             When you create an account, we may collect:
             <ul style={{ fontSize: '16px', lineHeight: '1.8' }}>
               <li>Name and email address</li>
@@ -48,7 +48,7 @@ const PrivacyPolicy: React.FC = () => {
           </Paragraph>
 
           <Title level={3}>Usage Information</Title>
-          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
             We automatically collect certain information about your use of our app:
             <ul style={{ fontSize: '16px', lineHeight: '1.8' }}>
               <li>Device information (device type, operating system, unique device identifiers)</li>
@@ -58,8 +58,8 @@ const PrivacyPolicy: React.FC = () => {
             </ul>
           </Paragraph>
 
-          <Title level={2} style={{ color: '#e74c3c', marginTop: '40px' }}>How We Use Your Information</Title>
-          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Title level={2} style={{ color: '#e5e7eb', marginTop: '40px' }}>How We Use Your Information</Title>
+          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
             We use the information we collect to:
             <ul style={{ fontSize: '16px', lineHeight: '1.8' }}>
               <li>Provide and improve our services</li>
@@ -72,8 +72,8 @@ const PrivacyPolicy: React.FC = () => {
             </ul>
           </Paragraph>
 
-          <Title level={2} style={{ color: '#e74c3c', marginTop: '40px' }}>Information Sharing</Title>
-          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Title level={2} style={{ color: '#e5e7eb', marginTop: '40px' }}>Information Sharing</Title>
+          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
             We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:
             <ul style={{ fontSize: '16px', lineHeight: '1.8' }}>
               <li><strong>Service Providers:</strong> With trusted third parties who help us operate our app (payment processors, cloud storage providers)</li>
@@ -83,13 +83,13 @@ const PrivacyPolicy: React.FC = () => {
             </ul>
           </Paragraph>
 
-          <Title level={2} style={{ color: '#e74c3c', marginTop: '40px' }}>Data Security</Title>
-          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Title level={2} style={{ color: '#e5e7eb', marginTop: '40px' }}>Data Security</Title>
+          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
             We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.
           </Paragraph>
 
-          <Title level={2} style={{ color: '#e74c3c', marginTop: '40px' }}>Your Rights</Title>
-          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Title level={2} style={{ color: '#e5e7eb', marginTop: '40px' }}>Your Rights</Title>
+          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
             Depending on your location, you may have the following rights:
             <ul style={{ fontSize: '16px', lineHeight: '1.8' }}>
               <li>Access to your personal information</li>
@@ -101,28 +101,28 @@ const PrivacyPolicy: React.FC = () => {
             </ul>
           </Paragraph>
 
-          <Title level={2} style={{ color: '#e74c3c', marginTop: '40px' }}>Cookies and Tracking</Title>
-          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Title level={2} style={{ color: '#e5e7eb', marginTop: '40px' }}>Cookies and Tracking</Title>
+          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
             Our app may use cookies and similar tracking technologies to enhance your experience, analyze usage patterns, and provide personalized content.
           </Paragraph>
 
-          <Title level={2} style={{ color: '#e74c3c', marginTop: '40px' }}>Third-Party Services</Title>
-          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Title level={2} style={{ color: '#e5e7eb', marginTop: '40px' }}>Third-Party Services</Title>
+          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
             Our app may contain links to third-party websites or services. We are not responsible for the privacy practices of these third parties. We encourage you to read their privacy policies.
           </Paragraph>
 
-          <Title level={2} style={{ color: '#e74c3c', marginTop: '40px' }}>Children's Privacy</Title>
-          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Title level={2} style={{ color: '#e5e7eb', marginTop: '40px' }}>Children's Privacy</Title>
+          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
             Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.
           </Paragraph>
 
-          <Title level={2} style={{ color: '#e74c3c', marginTop: '40px' }}>Changes to This Policy</Title>
-          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Title level={2} style={{ color: '#e5e7eb', marginTop: '40px' }}>Changes to This Policy</Title>
+          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
             We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
           </Paragraph>
 
-          <Title level={2} style={{ color: '#e74c3c', marginTop: '40px' }}>Contact Us</Title>
-          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <Title level={2} style={{ color: '#e5e7eb', marginTop: '40px' }}>Contact Us</Title>
+          <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#cbd5e1' }}>
             If you have any questions about this Privacy Policy, please contact us:
             <br />
             <strong>Email:</strong> kwesiselasi476@gmail.com
@@ -132,8 +132,8 @@ const PrivacyPolicy: React.FC = () => {
             <strong>Address:</strong> Ghana
           </Paragraph>
 
-          <div style={{ marginTop: '40px', padding: '20px', backgroundColor: '#f5f5f5', borderRadius: '8px' }}>
-            <Text type="secondary" style={{ fontSize: '16px' }}>
+          <div style={{ marginTop: '40px', padding: '20px', background: 'rgba(255,255,255,0.06)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.12)' }}>
+            <Text type="secondary" style={{ fontSize: '16px', color: '#cbd5e1' }}>
               By using our app, you agree to the collection and use of information in accordance with this Privacy Policy.
             </Text>
           </div>

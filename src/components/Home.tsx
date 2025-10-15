@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Layout, Typography, Space, Card, Row, Col, Statistic, List, Avatar, Divider } from 'antd';
-import { HomeOutlined, SearchOutlined, HeartOutlined, BellOutlined, StarFilled, SafetyCertificateOutlined, MobileOutlined, GlobalOutlined, CheckCircleOutlined, UserOutlined, SettingOutlined, QuestionCircleOutlined, PlayCircleOutlined, AppleOutlined, AndroidOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
+import { Button, Layout, Typography } from 'antd';
+import PartnerOnboarding from './PartnerOnboarding';
+import { HomeOutlined, SearchOutlined, HeartOutlined, BellOutlined, StarFilled, SafetyCertificateOutlined, MobileOutlined, GlobalOutlined, CheckCircleOutlined, AppleOutlined, AndroidOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 const { Header, Content, Footer } = Layout;
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph } = Typography;
 
 const Home: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,14 +14,31 @@ const Home: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // Reveal on scroll animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { rootMargin: '0px 0px -10% 0px', threshold: 0.15 }
+    );
+
+    document.querySelectorAll('.reveal-on-scroll').forEach((el) => observer.observe(el));
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <Layout className="app">
-      {/* Header - Simplified */}
+      {/* Header - Dark Glass */}
       <Header className={`header ${isScrolled ? 'scrolled' : ''}`}>
         <div className="container">
           <div className="header-content">
@@ -32,45 +50,65 @@ const Home: React.FC = () => {
             
             <nav className="header-nav">
               <a href="#features">Features</a>
+              <a href="#benefits">Benefits</a>
               <a href="#download">Download</a>
             </nav>
             
-            <Button type="primary" className="btn-primary">
-              Get Started
-            </Button>
           </div>
         </div>
       </Header>
 
       <Content>
-        {/* Hero Section */}
+        {/* Hero Section - Dark Premium */}
         <section id="home" className="hero-section">
           <div className="floating-element"></div>
           <div className="floating-element"></div>
           <div className="floating-element"></div>
+          <div className="orb orb-1"></div>
+          <div className="orb orb-2"></div>
           
           <div className="container">
             <div className="hero-content">
-              <div className="hero-text">
+              <div className="hero-text reveal-on-scroll">
                 <h1>
-                  Find Your Perfect <span>Home</span> Away From Home
+                  Stay Smart. <span>Live Better.</span>
                 </h1>
                 <p>
-                  Discover amazing properties, book rooms instantly, and experience 
-                  hospitality like never before. Swift Stay makes finding accommodation 
-                  simple, secure, and satisfying.
+                  Discover curated stays, instant booking, and seamless support. A modern
+                  accommodation experience built for comfort, convenience, and confidence.
                 </p>
                 <div className="hero-buttons">
-                  <Button type="primary" size="large" icon={<MobileOutlined />} className="btn-primary">
+                  <Button
+                    type="primary"
+                    size="large"
+                    icon={<MobileOutlined />}
+                    className="btn-primary hero-cta"
+                    onClick={() => document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    Get Started
+                  </Button>
+                  <Button
+                    type="default"
+                    size="large"
+                    icon={<GlobalOutlined />}
+                    className="btn-secondary"
+                    onClick={() => document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
                     Download App
                   </Button>
-                  <Button type="default" size="large" icon={<GlobalOutlined />} className="btn-secondary">
-                    Learn More
+                  <Button
+                    type="default"
+                    size="large"
+                    icon={<HomeOutlined />}
+                    className="btn-secondary"
+                    onClick={() => document.getElementById('partner')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    Become a Partner
                   </Button>
                 </div>
               </div>
               
-              <div className="hero-image">
+              <div className="hero-image reveal-on-scroll">
                 <div className="phone-mockup">
                   <div className="phone-header">
                     <div className="phone-dots">
@@ -81,10 +119,10 @@ const Home: React.FC = () => {
                   </div>
                   <div className="phone-content">
                     <div className="phone-image"></div>
-                    <div className="phone-title">Luxury Villa</div>
-                    <div className="phone-location">Bali, Indonesia</div>
+                    <div className="phone-title">Skyline Studio</div>
+                    <div className="phone-location">Accra, Ghana</div>
                     <div className="phone-footer">
-                      <div className="phone-price">$150/night</div>
+                      <div className="phone-price">$85/night</div>
                       <div className="phone-rating">
                         <StarFilled style={{ color: '#f39c12' }} />
                         4.8
@@ -104,23 +142,23 @@ const Home: React.FC = () => {
               Trusted by Thousands
             </Title>
             <Paragraph className="section-subtitle">
-              Join our growing community of satisfied users who trust Swift Stay for their accommodation needs
+              Join thousands of travelers and hosts who trust Swift Stay.
             </Paragraph>
             
             <div className="stats-grid">
-              <div className="stat-item">
+              <div className="stat-item reveal-on-scroll">
                 <span className="number">50K+</span>
                 <div className="label">Happy Users</div>
               </div>
-              <div className="stat-item">
+              <div className="stat-item reveal-on-scroll" style={{ transitionDelay: '0.06s' }}>
                 <span className="number">10K+</span>
                 <div className="label">Properties</div>
               </div>
-              <div className="stat-item">
+              <div className="stat-item reveal-on-scroll" style={{ transitionDelay: '0.12s' }}>
                 <span className="number">95%</span>
                 <div className="label">Satisfaction Rate</div>
               </div>
-              <div className="stat-item">
+              <div className="stat-item reveal-on-scroll" style={{ transitionDelay: '0.18s' }}>
                 <span className="number">24/7</span>
                 <div className="label">Support</div>
               </div>
@@ -139,17 +177,17 @@ const Home: React.FC = () => {
             </Paragraph>
             
             <div className="features-grid">
-              <div className="feature-card">
+              <div className="feature-card reveal-on-scroll">
                 <div className="feature-icon">
                   <SearchOutlined />
                 </div>
                 <h3 className="feature-title">Smart Search</h3>
                 <p className="feature-description">
-                  Find exactly what you're looking for with our intelligent search and filtering system
+                  Find exactly what you need with intelligent filters and relevant results.
                 </p>
               </div>
               
-              <div className="feature-card">
+              <div className="feature-card reveal-on-scroll" style={{ transitionDelay: '0.06s' }}>
                 <div className="feature-icon">
                   <HeartOutlined />
                 </div>
@@ -159,27 +197,27 @@ const Home: React.FC = () => {
                 </p>
               </div>
               
-              <div className="feature-card">
+              <div className="feature-card reveal-on-scroll" style={{ transitionDelay: '0.12s' }}>
                 <div className="feature-icon">
                   <BellOutlined />
                 </div>
                 <h3 className="feature-title">Instant Notifications</h3>
                 <p className="feature-description">
-                  Stay updated with real-time notifications about bookings and offers
+                  Real-time alerts for bookings, updates, and exclusive offers.
                 </p>
               </div>
               
-              <div className="feature-card">
+              <div className="feature-card reveal-on-scroll" style={{ transitionDelay: '0.18s' }}>
                 <div className="feature-icon">
                   <SafetyCertificateOutlined />
                 </div>
                 <h3 className="feature-title">Secure Booking</h3>
                 <p className="feature-description">
-                  Book with confidence using our secure payment and verification system
+                  Book with confidence with strong verification and secure payments.
                 </p>
               </div>
               
-              <div className="feature-card">
+              <div className="feature-card reveal-on-scroll" style={{ transitionDelay: '0.24s' }}>
                 <div className="feature-icon">
                   <MobileOutlined />
                 </div>
@@ -189,13 +227,13 @@ const Home: React.FC = () => {
                 </p>
               </div>
               
-              <div className="feature-card">
+              <div className="feature-card reveal-on-scroll" style={{ transitionDelay: '0.30s' }}>
                 <div className="feature-icon">
                   <GlobalOutlined />
                 </div>
                 <h3 className="feature-title">Global Reach</h3>
                 <p className="feature-description">
-                  Access properties worldwide with our extensive network of hosts
+                  Access stays worldwide through our growing host network.
                 </p>
               </div>
             </div>
@@ -206,7 +244,7 @@ const Home: React.FC = () => {
         <section id="benefits" className="benefits-section">
           <div className="container">
             <div className="benefits-content">
-              <div className="benefits-text">
+              <div className="benefits-text reveal-on-scroll">
                 <h2>Everything You Need for the Perfect Stay</h2>
                 <p>
                   From the moment you start searching to the day you check out, 
@@ -241,7 +279,7 @@ const Home: React.FC = () => {
                 </div>
               </div>
               
-              <div className="benefits-card">
+              <div className="benefits-card reveal-on-scroll">
                 <div className="icon">
                   <HomeOutlined />
                 </div>
@@ -265,16 +303,30 @@ const Home: React.FC = () => {
             </p>
             
             <div className="download-buttons">
-              <Button className="download-btn" size="large" icon={<AppleOutlined />}>
+              <Button className="download-btn reveal-on-scroll" size="large" icon={<AppleOutlined />}>
                 Download for iOS
               </Button>
-              <Button className="download-btn" size="large" icon={<AndroidOutlined />}>
+              <Button className="download-btn reveal-on-scroll" size="large" icon={<AndroidOutlined />} style={{ transitionDelay: '0.06s' }}>
                 Download for Android
               </Button>
             </div>
           </div>
         </section>
       </Content>
+
+      {/* Partner Onboarding CTA */}
+      <div id="partner-cta" style={{ background: '#0f172a' }}>
+        <div className="container" style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <div style={{ padding: '60px 20px' }}>
+            <Title level={1} style={{ color: '#fff', textAlign: 'center' }}>List Your Property on Swift Stay</Title>
+            <Paragraph style={{ color: 'rgba(255,255,255,0.8)', textAlign: 'center', marginBottom: 32 }}>
+              Join our network of hosts and reach thousands of travelers.
+            </Paragraph>
+          </div>
+        </div>
+      </div>
+
+      <PartnerOnboarding />
 
       {/* Footer - Simplified with Contact Info */}
       <Footer className="footer">

@@ -166,7 +166,7 @@ const DeleteAccount: React.FC = () => {
                 type="primary" 
                 icon={<MailOutlined />} 
                 size="large"
-                href="mailto:kwesiselasi476@gmail.com?subject=Account%20Deletion%20Request"
+                href="mailto:acheampongoseph470@gmail.com?subject=Account%20Deletion%20Request"
                 style={{ background: 'linear-gradient(135deg, #ef4444, #f59e0b)', borderColor: 'transparent' }}
               >
                 Email Us
@@ -174,7 +174,7 @@ const DeleteAccount: React.FC = () => {
               <Button 
                 icon={<PhoneOutlined />} 
                 size="large"
-                href="tel:+233240333837"
+                href="tel:+233257220301"
                 style={{ color: '#93c5fd', borderColor: 'rgba(255,255,255,0.12)' }}
               >
                 Call Us
@@ -330,8 +330,8 @@ const DeleteAccount: React.FC = () => {
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
           <Paragraph style={{ fontSize: '16px', color: '#cbd5e1' }}>
             Need help or have questions? Contact us at{' '}
-            <a href="mailto:kwesiselasi476@gmail.com" style={{ color: '#93c5fd' }}>
-              kwesiselasi476@gmail.com
+            <a href="mailto:acheampongoseph470@gmail.com" style={{ color: '#93c5fd' }}>
+              acheampongoseph470@gmail.com
             </a>
           </Paragraph>
         </div>

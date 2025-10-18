@@ -364,12 +364,12 @@ const Home: React.FC = () => {
               <ul>
                 <li>
                   <a href="mailto:kwesiselasi476@gmail.com" className="contact-link">
-                    <MailOutlined /> kwesiselasi476@gmail.com
+                    <MailOutlined /> acheampongoseph470@gmail.com
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+233240333837" className="contact-link">
-                    <PhoneOutlined /> +233 24 033 3837
+                  <a href="tel:+233257220301" className="contact-link">
+                    <PhoneOutlined /> +233 25 722 0301
                   </a>
                 </li>
                 <li><a href="#about">About</a></li>

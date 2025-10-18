@@ -148,6 +148,24 @@ body {
   color: #27ae60;
 }
 
+.navbar-partner-btn {
+  background: linear-gradient(135deg, #22c55e 0%, #06b6d4 100%) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3) !important;
+}
+
+.navbar-partner-btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4) !important;
+  background: linear-gradient(135deg, #16a34a 0%, #0891b2 100%) !important;
+}
+
 .btn-primary {
   background: linear-gradient(135deg, #22c55e 0%, #06b6d4 100%);
   color: white;
@@ -1011,6 +1029,10 @@ body {
   }
   
   .header-nav {
+    display: none;
+  }
+  
+  .navbar-partner-btn {
     display: none;
   }
   

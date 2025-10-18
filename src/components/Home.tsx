@@ -52,6 +52,14 @@ const Home: React.FC = () => {
               <a href="#features">Features</a>
               <a href="#benefits">Benefits</a>
               <a href="#download">Download</a>
+              <Button
+                type="primary"
+                size="small"
+                className="navbar-partner-btn"
+                onClick={() => document.getElementById('partner')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Become a Partner
+              </Button>
             </nav>
             
           </div>
